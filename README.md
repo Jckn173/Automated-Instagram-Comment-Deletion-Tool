@@ -138,10 +138,9 @@ You should only continue if you understand what the script does and why you’re
 
 <p><b>Delay after each mass delete:</b></p>
 <pre>
-const WAIT_AFTER_DELETE = 8500; // milliseconds
+const WAIT_AFTER_DELETE = 12000; // milliseconds (reccomend 12s or above for average internet speeds, test for yourself though)
 const MAX_POPUP_WAIT = 5000; // ms
 const POPUP_POLL_INTERVAL = 200; // ms between popup checks
-const WAIT_AFTER_DELETE = 12000; // ms wait after delete (with or without popup)
 const TIME_AFTER_SELECT = 400; // ms after clicking "Select"
 </pre>
 
