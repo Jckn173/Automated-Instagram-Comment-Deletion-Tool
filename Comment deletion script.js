@@ -2,7 +2,7 @@
 // Total time to wait for confirmation popup to appear after bottom Delete
 const MAX_POPUP_WAIT = 5000;        // ms
 const POPUP_POLL_INTERVAL = 200;    // ms between popup checks
-const WAIT_AFTER_DELETE = 15000;     // ms wait after delete (with or without popup)
+const WAIT_AFTER_DELETE = 12000;     // ms after deletion (reccomend 12-15s) 
 const TIME_AFTER_SELECT = 400;      // ms after clicking "Select"
 // (scroll-related timing removed)
 
