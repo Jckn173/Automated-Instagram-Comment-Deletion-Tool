@@ -1,5 +1,5 @@
 <h1>Automated-Instagram-Comment-Deletion-Tool</h1>
-<h2>Instagram Comment Bulk-Delete Script (Visible-Only Version)</h2>
+<h2>Instagram Comment Bulk-Delete Script </h2>
 <hr>
 
 <p>
