@@ -15,7 +15,7 @@ This script automates the deletion of visible Instagram comments from the Your A
   <li>Read the entire script first.</li>
   <li>Understand exactly what it does.</li>
   <li>Running any automation in your browser can cause unintended changes.</li>
-  <li>If you cannot read and understand browser-side JavaScript or know someone you trust who does, do not run this script</li>
+  <li>If you cannot read and understand browser-side JavaScript or know someone you trust who does, do not run this script.</li>
   <li>You run this script at your own risk.</li>
   <li>This script interacts with your real Instagram account.</li>
   <li>I am not responsible for account issues, rate limits, login challenges, or accidental deletion of comments.</li>
