@@ -4,7 +4,7 @@ Instagram Comment Bulk-Delete Script (Visible-Only Version)
 This script automates the deletion of visible Instagram comments from the Your Activity → Interactions → Comments page. It selects up to a configurable number of comments at a time (default: 15), clicks the bottom Delete button, confirms the popup, and waits for Instagram to refresh the list.
 
 
-Important Disclaimer
+#Important Disclaimer
 
 Before using this script:
 
@@ -33,7 +33,7 @@ This is expected.
 
 You should only continue if you understand what the script does and why you’re using it.
 
-Features
+#Features
 
 Deletes ONLY comments that are currently visible on the screen
 
@@ -47,7 +47,7 @@ Waits for Instagram to reload the list before continuing
 
 Can be stopped at any time with a single command (stopAuto = True)
 
-How to Open the Developer Console
+#How to Open the Developer Console
 OperaGX
 
 Windows: CtRL + Shift + I
@@ -82,7 +82,7 @@ Enable DevTools: Safari → Preferences → Advanced → ✔ “Show Develop men
 
 Open Console: Cmd + Option + C
 
-How to Use the Script
+#How to Use the Script
 1. Log into Instagram
 
 Go to:
@@ -122,7 +122,7 @@ You will see:
 No visible comments to process; stopping.
 
 
-At that point:
+#At that point:
 
 Increase Wait_After_Delete time and rerun code
 
@@ -138,7 +138,7 @@ stopAuto = true;
 
 Configuration
 
-Inside the script you can safely edit:
+#Inside the script you can safely edit:
 
 Batch size (how many comments per cycle):
 const BATCH_SIZE = 15;
@@ -151,7 +151,7 @@ const WAIT_AFTER_DELETE = 12000;     // ms wait after delete (with or without po
 const TIME_AFTER_SELECT = 400;      // ms after clicking "Select"
 // (scroll-related timing removed)
 
-Safety Notes
+#Safety Notes
 
 The script interacts only with the public Instagram UI, just like a human user.
 
@@ -161,7 +161,7 @@ It only selects and deletes comments you can already see.
 
 If Instagram changes its layout, selectors may break.
 
-Final Notes
+#Final Notes
 
 This tool is intended for people who need to clean up large numbers of old comments and don’t want to delete them one at a time manually.
 
