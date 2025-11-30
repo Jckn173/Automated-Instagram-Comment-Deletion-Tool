@@ -120,6 +120,7 @@ You should only continue if you understand what the script does and why you’re
   <li>Increase Wait_After_Delete time and rerun code</li>
   <li>Refresh the page if you recieve an Instagram error</li>
   <li>Rerun code</li>
+  <li>You've deleted all comments, you're done</li>
 </ul>
 
 <h3>7. To stop the script at any time</h3>
