@@ -81,7 +81,7 @@ You should only continue if you understand what the script does and why you’re
 
 <h3>Safari (Mac)</h3>
 <ul>
-  <li>Enable DevTools: Safari → Preferences → Advanced → ✔ “Show Develop menu”</li>
+  <li>Enable DevTools: Safari → Preferences → Advanced → “Show Develop menu”</li>
   <li>Open Console: Cmd + Option + C</li>
 </ul>
 
