@@ -3,7 +3,7 @@
 <hr>
 
 <p>
-This script automates the deletion of visible Instagram comments from the Your Activity → Interactions → Comments page. It selects up to a configurable number of comments at a time (default: 15), clicks the bottom Delete button, confirms the popup, and waits for Instagram to refresh the list.
+This script automates the deletion of visible Instagram comments from the Your Activity → Interactions → Comments page. It selects up to a configurable number of comments at a time (default: 15), clicks the bottom Delete button, confirms the popup, and waits for Instagram to refresh the list. Then repeats, it does about 15 at a time because Instagram seems to not like it if you do too much stuff too quickly. 
 </p>
 
 <h2>Important Disclaimer</h2>
@@ -15,6 +15,7 @@ This script automates the deletion of visible Instagram comments from the Your A
   <li>Read the entire script first.</li>
   <li>Understand exactly what it does.</li>
   <li>Running any automation in your browser can cause unintended changes.</li>
+  <li>If you cannot read and understand browser-side JavaScript or know someone you trust who does, do not run this script</li>
   <li>You run this script at your own risk.</li>
   <li>This script interacts with your real Instagram account.</li>
   <li>I am not responsible for account issues, rate limits, login challenges, or accidental deletion of comments.</li>
