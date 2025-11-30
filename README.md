@@ -1,169 +1,234 @@
-# Automated-Instagram-Comment-Deletion-Tool
-Instagram Comment Bulk-Delete Script (Visible-Only Version)
-
-This script automates the deletion of visible Instagram comments from the Your Activity → Interactions → Comments page. It selects up to a configurable number of comments at a time (default: 15), clicks the bottom Delete button, confirms the popup, and waits for Instagram to refresh the list.
-
-
-#Important Disclaimer
-
-Before using this script:
-
-Read the entire script first.
-
-Understand exactly what it does.
-Running any automation in your browser can cause unintended changes.
-
-You run this script at your own risk.
-This script interacts with your real Instagram account.
-
-I am not responsible for account issues, rate limits, login challenges, or accidental deletion of comments.
-
-This script does not bypass Instagram permissions, limits, or security.
-
-If you do not understand what the script does, do not run it.
-
-Browser DevTools Warning
-
-When you open the browser’s Developer Console, you may see warnings such as:
-
-“Do not paste code you do not understand into this console. Attackers may trick you into doing something harmful…”
-
-These are normal and appear in all modern browsers to protect users from scams.
-This is expected.
-
-You should only continue if you understand what the script does and why you’re using it.
-
-#Features
-
-Deletes ONLY comments that are currently visible on the screen
-
-Selects up to 15 visible comments per batch (customizable)
-
-Clicks the bottom Delete button automatically
-
-Confirms the Instagram popup delete prompt
-
-Waits for Instagram to reload the list before continuing
-
-Can be stopped at any time with a single command (stopAuto = True)
-
-#How to Open the Developer Console
-OperaGX
-
-Windows: CtRL + Shift + I
-
-Mac: Cmd + Option I
-
-Google Chrome
-
-Windows: Ctrl + Shift + J
-
-Mac: Cmd + Option + J
-
-Or: Right-click → Inspect → Console tab
-
-Firefox
-
-Windows: Ctrl + Shift + K
-
-Mac: Cmd + Option + K
-
-Or: Right-click → Inspect → Console tab
-
-Microsoft Edge
-
-Windows: Ctrl + Shift + J
-
-Right-click → Inspect → Console tab
-
-Safari (Mac)
-
-Enable DevTools: Safari → Preferences → Advanced → ✔ “Show Develop menu”
-
-Open Console: Cmd + Option + C
-
-#How to Use the Script
-1. Log into Instagram
-
-Go to:
-
-instagram.com/your_activity/interactions/comments
-
-2. Make sure comments are visible
-
-Zoom out on the page until about 15 comments are visible (CRTL + MwheelDown) 
-
-3. Open the Dev Console
-
-(See instructions above)
-
-4. Paste the script into the console
-
-Copy the entire script and paste it into the console.
-
-5. Press Enter
-
-The script will begin:
-
-Clicking Select
-
-Selecting up to 15 visible comments
-
-Clicking Delete
-
-Confirming the popup
-
-Pausing until IG refreshes
-
-6. When it stops
-
-You will see:
-
-No visible comments to process; stopping.
-
-
-#At that point:
-
-Increase Wait_After_Delete time and rerun code
-
-Refresh the page if you recieve an Instagram error
-
-Rerun code
-
-7. To stop the script at any time
-
-Run:
-
-stopAuto = true;
-
-Configuration
-
-#Inside the script you can safely edit:
-
-Batch size (how many comments per cycle):
-const BATCH_SIZE = 15;
-
-Delay after each mass delete:
-const WAIT_AFTER_DELETE = 8500; // milliseconds
-const MAX_POPUP_WAIT = 5000;        // ms
-const POPUP_POLL_INTERVAL = 200;    // ms between popup checks
-const WAIT_AFTER_DELETE = 12000;     // ms wait after delete (with or without popup)
-const TIME_AFTER_SELECT = 400;      // ms after clicking "Select"
-// (scroll-related timing removed)
-
-#Safety Notes
-
-The script interacts only with the public Instagram UI, just like a human user.
-
-It does not hack, bypass restrictions, or use private APIs.
-
-It only selects and deletes comments you can already see.
-
-If Instagram changes its layout, selectors may break.
-
-#Final Notes
-
-This tool is intended for people who need to clean up large numbers of old comments and don’t want to delete them one at a time manually.
-
-You are responsible for what gets deleted — double-check before running the script.
-
+<?xml version="1.0" encoding="UTF-8"?>
+<README>
+
+  <!-- ========================================================= -->
+  <!-- Automated-Instagram-Comment-Deletion-Tool                -->
+  <!-- ========================================================= -->
+
+  <section title="Automated-Instagram-Comment-Deletion-Tool">
+    <header>Automated-Instagram-Comment-Deletion-Tool</header>
+
+    <subheader>Instagram Comment Bulk-Delete Script (Visible-Only Version)</subheader>
+
+    <paragraph>
+      This script automates the deletion of visible Instagram comments from the 
+      <i>Your Activity → Interactions → Comments</i> page. It selects up to a configurable 
+      number of comments at a time (default: 15), clicks the bottom Delete button, 
+      confirms the popup, and waits for Instagram to refresh the list.
+    </paragraph>
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- Important Disclaimer                                      -->
+  <!-- ========================================================= -->
+
+  <section title="Important Disclaimer">
+    <header>Important Disclaimer</header>
+
+    <paragraph>Before using this script:</paragraph>
+
+    <list>
+      <item><b>Read the entire script first.</b></item>
+      <item><b>Understand exactly what it does.</b></item>
+      <item>Running any automation in your browser can cause unintended changes.</item>
+      <item>You run this script <b>at your own risk</b>.</item>
+      <item>This script interacts with your real Instagram account.</item>
+      <item>I am not responsible for account issues, rate limits, login challenges, or accidental deletion of comments.</item>
+      <item>This script does not bypass Instagram permissions, limits, or security.</item>
+    </list>
+
+    <paragraph>
+      <u>If you do not understand what the script does, do not run it.</u>
+    </paragraph>
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- Browser DevTools Warning                                  -->
+  <!-- ========================================================= -->
+
+  <section title="Browser DevTools Warning">
+    <header>Browser DevTools Warning</header>
+
+    <paragraph>
+      When you open the browser’s Developer Console, you may see warnings such as:
+    </paragraph>
+
+    <quote>
+      "Do not paste code you do not understand into this console. Attackers may 
+      trick you into doing something harmful…"
+    </quote>
+
+    <paragraph>
+      These are normal and appear in all modern browsers to protect users from scams. 
+      This is expected. You should only continue if you understand what the script 
+      does and why you’re using it.
+    </paragraph>
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- Features                                                   -->
+  <!-- ========================================================= -->
+
+  <section title="Features">
+    <header>Features</header>
+
+    <list>
+      <item>Deletes ONLY comments that are currently visible on the screen</item>
+      <item>Selects up to 15 visible comments per batch (customizable)</item>
+      <item>Clicks the bottom Delete button automatically</item>
+      <item>Confirms the Instagram popup delete prompt</item>
+      <item>Waits for Instagram to reload the list before continuing</item>
+      <item>Can be stopped at any time with a single command (<code>stopAuto = true</code>)</item>
+    </list>
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- How to Open the Developer Console                         -->
+  <!-- ========================================================= -->
+
+  <section title="How to Open the Developer Console">
+    <header>How to Open the Developer Console</header>
+
+    <subheader>OperaGX</subheader>
+    <list>
+      <item>Windows: <b>Ctrl + Shift + I</b></item>
+      <item>Mac: <b>Cmd + Option + I</b></item>
+    </list>
+
+    <subheader>Google Chrome</subheader>
+    <list>
+      <item>Windows: <b>Ctrl + Shift + J</b></item>
+      <item>Mac: <b>Cmd + Option + J</b></item>
+      <item>Right-click → Inspect → Console tab</item>
+    </list>
+
+    <subheader>Firefox</subheader>
+    <list>
+      <item>Windows: <b>Ctrl + Shift + K</b></item>
+      <item>Mac: <b>Cmd + Option + K</b></item>
+      <item>Right-click → Inspect → Console tab</item>
+    </list>
+
+    <subheader>Microsoft Edge</subheader>
+    <list>
+      <item>Windows: <b>Ctrl + Shift + J</b></item>
+      <item>Right-click → Inspect → Console tab</item>
+    </list>
+
+    <subheader>Safari (Mac)</subheader>
+    <list>
+      <item>Enable DevTools: Safari → Preferences → Advanced → “Show Develop menu”</item>
+      <item>Open Console: <b>Cmd + Option + C</b></item>
+    </list>
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- How to Use the Script                                     -->
+  <!-- ========================================================= -->
+
+  <section title="How to Use the Script">
+    <header>How to Use the Script</header>
+
+    <subheader>1. Log into Instagram</subheader>
+    <paragraph>Go to:</paragraph>
+    <code>instagram.com/your_activity/interactions/comments</code>
+
+    <subheader>2. Make sure comments are visible</subheader>
+    <paragraph>
+      Zoom out on the page until about 15 comments are visible (CTRL + Mouse Wheel Down).
+    </paragraph>
+
+    <subheader>3. Open the Dev Console</subheader>
+    <paragraph>(See instructions above)</paragraph>
+
+    <subheader>4. Paste the script into the console</subheader>
+    <paragraph>Copy the entire script and paste it into the console.</paragraph>
+
+    <subheader>5. Press Enter</subheader>
+    <paragraph>The script will begin:</paragraph>
+    <list>
+      <item>Clicking Select</item>
+      <item>Selecting up to 15 visible comments</item>
+      <item>Clicking Delete</item>
+      <item>Confirming the popup</item>
+      <item>Pausing until IG refreshes</item>
+    </list>
+
+    <subheader>6. When it stops</subheader>
+    <paragraph>You will see:</paragraph>
+    <quote>No visible comments to process; stopping.</quote>
+
+    <paragraph>At that point:</paragraph>
+    <list>
+      <item>Increase <i>WAIT_AFTER_DELETE</i> time and rerun the code</item>
+      <item>Refresh the page if you receive an Instagram error</item>
+      <item>Rerun the script</item>
+    </list>
+
+    <subheader>7. To stop the script at any time</subheader>
+    <code>stopAuto = true;</code>
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- Configuration                                              -->
+  <!-- ========================================================= -->
+
+  <section title="Configuration">
+    <header>Configuration</header>
+
+    <paragraph>Inside the script you can safely edit:</paragraph>
+
+    <subheader>Batch size (how many comments per cycle)</subheader>
+    <code>const BATCH_SIZE = 15;</code>
+
+    <subheader>Delay after each mass delete</subheader>
+    <code>
+      const WAIT_AFTER_DELETE = 8500; // milliseconds
+      const MAX_POPUP_WAIT = 5000;    // ms
+      const POPUP_POLL_INTERVAL = 200;// ms between popup checks
+      const WAIT_AFTER_DELETE = 12000;// ms wait after delete
+      const TIME_AFTER_SELECT = 400;  // ms after clicking "Select"
+    </code>
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- Safety Notes                                               -->
+  <!-- ========================================================= -->
+
+  <section title="Safety Notes">
+    <header>Safety Notes</header>
+
+    <list>
+      <item>The script interacts only with the public Instagram UI, just like a human user.</item>
+      <item>It does not hack, bypass restrictions, or use private APIs.</item>
+      <item>It only selects and deletes comments you can already see.</item>
+      <item>If Instagram changes its layout, selectors may break.</item>
+    </list>
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- Final Notes                                               -->
+  <!-- ========================================================= -->
+
+  <section title="Final Notes">
+    <header>Final Notes</header>
+
+    <paragraph>
+      This tool is intended for people who need to clean up large numbers of old comments 
+      and do not want to delete them one at a time manually.
+    </paragraph>
+
+    <paragraph>
+      You are responsible for what gets deleted — always double-check before running the script.
+    </paragraph>
+  </section>
+
+</README>
